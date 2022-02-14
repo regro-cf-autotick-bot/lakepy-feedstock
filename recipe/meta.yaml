@@ -1,5 +1,5 @@
 {% set name = "lakepy" %}
-{% set version = "2.2.1" %}
+{% set version = "3.1" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/lakepy-{{ version }}.tar.gz
-  sha256: 4137df6dc1a52ed4bdfd25abbbdd55d631491104094b5a3113f765cd7d598f54
+  sha256: 05585e365d9e27d691a7476e3011c9abceab0c2de5424e834f5f71b2f7ff61b6
 
 build:
   number: 0
