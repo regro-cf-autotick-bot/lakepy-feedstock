@@ -7,20 +7,20 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/lakepy-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/lakepy-{{ version }}.tar.gz
   sha256: 4137df6dc1a52ed4bdfd25abbbdd55d631491104094b5a3113f765cd7d598f54
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - contextily
     - geopandas
     - ipython
@@ -36,6 +36,8 @@ requirements:
     - tabulate
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - lakepy
   # commands:
